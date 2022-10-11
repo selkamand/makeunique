@@ -14,6 +14,9 @@ test_that("make_unique works", {
   vec_dup_char_with_na <- c('Bob', 'Bob', 'Bob', 'Billy', 'Billy', 'Sven', NA, NA)
   vec_dup_char_with_na_expected <-  c('Bob (1)', 'Bob (2)', 'Bob (3)', 'Billy (1)', 'Billy (2)', 'Sven', NA, NA)
 
+  vec_dup_factor <- factor(c('Bob', 'Bob', 'Bob', 'Billy', 'Billy', 'Sven'))
+  vec_dup_factor_expected <- c('Bob (1)', 'Bob (2)', 'Bob (3)', 'Billy (1)', 'Billy (2)', 'Sven')
+
   # Numerical inputs
   expect_error(
     make_unique(vec_unique_num),
@@ -77,5 +80,16 @@ test_that("make_unique works", {
   expect_equal(
     make_unique(vec_dup_char_with_na),
     vec_dup_char_with_na_expected
+  )
+
+  # Factor inputs
+  expect_error(
+    make_unique(vec_dup_factor, verbose = FALSE),
+    NA
+  )
+
+  expect_equal(
+    make_unique(vec_dup_factor, verbose = FALSE),
+    vec_dup_factor_expected
   )
 })

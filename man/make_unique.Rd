@@ -4,7 +4,7 @@
 \alias{make_unique}
 \title{Make Values Unique}
 \usage{
-make_unique(x, sep = " ", wrap_in_brackets = TRUE)
+make_unique(x, sep = " ", wrap_in_brackets = TRUE, verbose = TRUE)
 }
 \arguments{
 \item{x}{vector to de-duplicate}
@@ -12,6 +12,8 @@ make_unique(x, sep = " ", wrap_in_brackets = TRUE)
 \item{sep}{string separating (string)}
 
 \item{wrap_in_brackets}{should the number indicating order of duplicated elements be wrapped in round brackets? (flag)}
+
+\item{verbose}{verbosity level (flag)}
 }
 \value{
 x but duplicated values are de-duplicated by adding a number corresponding to the order in which duplicates appear

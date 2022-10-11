@@ -7,6 +7,7 @@ test_that("make_unique works", {
 
   vec_dup_char <- c('Bob', 'Bob', 'Bob', 'Billy', 'Billy', 'Sven')
   vec_dup_char_expected <- c('Bob (1)', 'Bob (2)', 'Bob (3)', 'Billy (1)', 'Billy (2)', 'Sven')
+  vec_dup_char_expected_dash_nowrap <- c('Bob-1', 'Bob-2', 'Bob-3', 'Billy-1', 'Billy-2', 'Sven')
 
   vec_dup_char_vals_clash_with_dedup_solution <- c('Bob', 'Bob', 'Bob', 'Billy', 'Billy', 'Sven', 'Billy (2)')
 
@@ -49,6 +50,11 @@ test_that("make_unique works", {
   expect_equal(
     make_unique(vec_dup_char),
     vec_dup_char_expected
+  )
+
+  expect_equal(
+    make_unique(vec_dup_char, sep = "-", wrap_in_brackets = FALSE),
+    vec_dup_char_expected_dash_nowrap
   )
 
 

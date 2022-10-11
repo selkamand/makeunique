@@ -4,8 +4,8 @@
 #' Append numbers to duplicate values to ensure all are unique
 #'
 #' @param x vector to de-duplicate
-#' @param sep string separating (character)
-#' @param wrap_in_brackets should the number indicating order of duplicated elements be wrapped in round brackets? (logical)
+#' @param sep string separating (string)
+#' @param wrap_in_brackets should the number indicating order of duplicated elements be wrapped in round brackets? (flag)
 #' @return x but duplicated values are de-duplicated by adding a number corresponding to the order in which duplicates appear
 #'
 #' @details Differs from 'make.unique' in base R by starting suffixes at 1 and allowing users to customize suffix format.
@@ -28,7 +28,7 @@ make_unique <- function(x, sep = " ", wrap_in_brackets = TRUE){
 
   values_still_duplicated <- deduplicated[duplicated(deduplicated)]
 
-  if(length(na.omit(values_still_duplicated)) > 0){
+  if(length(stats::na.omit(values_still_duplicated)) > 0){
     stop(
       "make_unique failed to make vector unique.\n",
       "This is because appending '  <dup_number>' to duplicate values led to",

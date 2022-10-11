@@ -27,11 +27,11 @@ R package for making all elements of a vector unique. Differs from 'make.unique'
 
 Install from cran
 
-```{r}
+``` r
 install.packages('makeunique')
 ```
 
-You can install the development version of makeunique like so:
+Install the development version of from github:
 
 ``` r
 # install.packages('remotes')

@@ -25,16 +25,9 @@ Install from cran
 
 ``` r
 install.packages('makeunique')
-#> Installing package into 'C:/Users/User/AppData/Local/Temp/Rtmp6NAEof/temp_libpath13a4508d1309'
-#> (as 'lib' is unspecified)
-#> Warning: package 'makeunique' is not available for this version of R
-#> 
-#> A version of this package for your version of R might be available elsewhere,
-#> see the ideas at
-#> https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages
 ```
 
-You can install the development version of makeunique like so:
+Install the development version of from github:
 
 ``` r
 # install.packages('remotes')

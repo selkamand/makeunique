@@ -37,6 +37,11 @@ test_that("make_unique works", {
   )
 
 
+  expect_warning(
+    make_unique(vec_dup_num, warn_about_type_conversion = TRUE),
+    'numeric.*character'
+  )
+
   # Character inputs
   expect_error(
     make_unique(vec_unique_char),
@@ -74,6 +79,8 @@ test_that("make_unique works", {
     NA
   )
 
+
+
   # Char with NAs
   expect_error(
     vec_dup_char_with_na,
@@ -94,6 +101,11 @@ test_that("make_unique works", {
   expect_equal(
     make_unique(vec_dup_factor, warn_about_type_conversion = FALSE),
     vec_dup_factor_expected
+  )
+
+  expect_warning(
+    make_unique(vec_dup_factor, warn_about_type_conversion = TRUE),
+    'factor.*character'
   )
 
   # Empty inputs

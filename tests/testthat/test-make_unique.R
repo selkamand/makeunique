@@ -112,9 +112,21 @@ test_that("make_unique works", {
     character(0)
   )
 
-  # Test Unsupported inputs
+  # Test incorrect argument classes
   expect_error(
     make_unique(as.Date(x = "02/02/22")),
     "character"
+  )
+
+  expect_error(
+    make_unique(LETTERS[1:10], sep = TRUE)
+  )
+
+  expect_error(
+    make_unique(LETTERS[1:10], wrap_in_brackets = "string")
+  )
+
+  expect_error(
+    make_unique(LETTERS[1:10], warn_about_type_conversion = "string")
   )
 })

@@ -50,10 +50,5 @@ make_unique <- function(x, sep = " ", wrap_in_brackets = TRUE, warn_about_type_c
     )
   }
 
-  if(is.factor(x)) {
-    x <- factor(fct_values)
-    levels(x) <- deduplicated
-  }
-
   return(deduplicated)
 }

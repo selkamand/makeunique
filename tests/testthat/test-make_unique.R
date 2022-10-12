@@ -17,19 +17,22 @@ test_that("make_unique works", {
   vec_dup_factor <- factor(c('Bob', 'Bob', 'Bob', 'Billy', 'Billy', 'Sven'))
   vec_dup_factor_expected <- c('Bob (1)', 'Bob (2)', 'Bob (3)', 'Billy (1)', 'Billy (2)', 'Sven')
 
+  vec_empty_char <- character(0)
+  vec_empty_num <- numeric(0)
+
   # Numerical inputs
   expect_error(
-    make_unique(vec_unique_num),
+    make_unique(vec_unique_num, warn_about_type_conversion = FALSE),
     NA
   )
 
   expect_equal(
-    make_unique(vec_unique_num),
-    vec_unique_num
+    make_unique(vec_unique_num, warn_about_type_conversion = FALSE),
+    as.character(vec_unique_num)
   )
 
   expect_equal(
-    make_unique(vec_dup_num),
+    make_unique(vec_dup_num, warn_about_type_conversion = FALSE),
     vec_dup_num_expected
   )
 
@@ -84,12 +87,34 @@ test_that("make_unique works", {
 
   # Factor inputs
   expect_error(
-    make_unique(vec_dup_factor, verbose = FALSE),
+    make_unique(vec_dup_factor, warn_about_type_conversion = FALSE),
     NA
   )
 
   expect_equal(
-    make_unique(vec_dup_factor, verbose = FALSE),
+    make_unique(vec_dup_factor, warn_about_type_conversion = FALSE),
     vec_dup_factor_expected
+  )
+
+  # Empty inputs
+  expect_equal(
+    make_unique(character(0)),
+    character(0)
+  )
+
+  expect_equal(
+    make_unique(numeric(0), warn_about_type_conversion = FALSE),
+    as.character(numeric(0))
+  )
+
+  expect_equal(
+    make_unique(as.factor(character(0)), warn_about_type_conversion = FALSE),
+    character(0)
+  )
+
+  # Test Unsupported inputs
+  expect_error(
+    make_unique(as.Date(x = "02/02/22")),
+    "character"
   )
 })

@@ -4,7 +4,12 @@
 \alias{make_unique}
 \title{Make Values Unique}
 \usage{
-make_unique(x, sep = " ", wrap_in_brackets = TRUE, verbose = TRUE)
+make_unique(
+  x,
+  sep = " ",
+  wrap_in_brackets = TRUE,
+  warn_about_type_conversion = TRUE
+)
 }
 \arguments{
 \item{x}{vector to de-duplicate}
@@ -13,7 +18,7 @@ make_unique(x, sep = " ", wrap_in_brackets = TRUE, verbose = TRUE)
 
 \item{wrap_in_brackets}{should the number indicating order of duplicated elements be wrapped in round brackets? (flag)}
 
-\item{verbose}{verbosity level (flag)}
+\item{warn_about_type_conversion}{should the function warn user if input type is converted to 'character' in output (flag)}
 }
 \value{
 x but duplicated values are de-duplicated by adding a number corresponding to the order in which duplicates appear

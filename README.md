@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# makeunique <img src="man/figures/logo.png" align="right" height="110" />
+# makeunique <img src="man/figures/logo.png" align="right" height="110"/>
 
 <!-- badges: start -->
 
@@ -12,6 +12,8 @@ status](https://www.r-pkg.org/badges/version/makeunique)](https://CRAN.R-project
 [![R-CMD-check](https://github.com/selkamand/makeunique/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/selkamand/makeunique/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/selkamand/makeunique/branch/master/graph/badge.svg)](https://app.codecov.io/gh/selkamand/makeunique?branch=master)
+[![Download
+Stats](http://cranlogs.r-pkg.org/badges/makeunique)](https://cran.r-project.org/package=makeunique)
 
 <!-- badges: end -->
 

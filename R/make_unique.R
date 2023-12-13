@@ -43,7 +43,7 @@ make_unique <- function(x, sep = " ", wrap_in_brackets = TRUE, warn_about_type_c
   if(length(stats::na.omit(values_still_duplicated)) > 0){
     stop(
       "make_unique failed to make vector unique.\n",
-      "This is because appending '  <dup_number>' to duplicate values led to",
+      "This is because appending '  <dup_number>' to duplicate values led to ",
       "creation of term(s) that were in the original dataset: \n[",
       paste0(values_still_duplicated, collapse = ', '),
       "]\n\nPlease try again with a different argument for either `wrap_in_brackets` or `sep`"

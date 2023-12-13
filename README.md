@@ -6,15 +6,18 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/makeunique)](https://CRAN.R-project.org/package=makeunique)
 [![R-CMD-check](https://github.com/selkamand/makeunique/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/selkamand/makeunique/actions/workflows/R-CMD-check.yaml)
+[![Code
+Size](https://img.shields.io/github/languages/code-size/selkamand/makeunique.svg)](https://github.com/selkamand/makeunique)
 [![Codecov test
 coverage](https://codecov.io/gh/selkamand/makeunique/branch/master/graph/badge.svg)](https://app.codecov.io/gh/selkamand/makeunique?branch=master)
 [![Download
 Stats](http://cranlogs.r-pkg.org/badges/makeunique)](https://cran.r-project.org/package=makeunique)
-
+[![Downloads Grand
+Total](http://cranlogs.r-pkg.org/badges/grand-total/makeunique)](https://cran.r-project.org/package=makeunique)
 <!-- badges: end -->
 
 R package for making all elements of a vector unique. Differs from
